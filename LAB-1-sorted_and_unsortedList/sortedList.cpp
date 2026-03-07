@@ -272,4 +272,5 @@ void sortedList::merge(const sortedList &list2)
     currSize = currSize + list2.currSize;
     delete [] arr;
     arr = newArr;
+
 }
