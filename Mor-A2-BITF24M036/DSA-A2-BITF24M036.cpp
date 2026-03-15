@@ -95,7 +95,7 @@ void sortBowlingFigures1(BowlingFigures* bf, int count)
             j = j - 1;
         }
 
-        bf[j + 1] = key;
+        bf[j + 1] = key; 
     }
 }
 
