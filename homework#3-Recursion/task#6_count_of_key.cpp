@@ -1,11 +1,12 @@
 #include<iostream>
 using namespace std;
 int linearSearch(int *a, int start, int end, int key) {
+    int count=0;
     if(start>end) {
-        return -99;
+        return count;
     }
     else if(a[start]==key) {
-        return start;
+        count++;
     }
     else {
         return linearSearch(a, start+1, end, key);
@@ -28,3 +29,7 @@ int main() {
     cout << "The key " << key << " appears at idx: " << idx<< "  in the array." << endl;
     delete[] arr;
 }
+
+// //git add .
+// git commit -m "Added task4 recursion problem"
+// git push
