@@ -12,7 +12,7 @@ bool findKthLargest ( int* arr, int n, int k, int& val) {
         int maxIndex = i;
         for (int j = i + 1; j < n; j++) {
             if (arr[j] > arr[maxIndex]) {
-                maxIndex = j;
+                maxIndex = j; 
             }
         }
         if (maxIndex != i) {
