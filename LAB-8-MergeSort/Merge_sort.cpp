@@ -8,14 +8,14 @@ void mergeSort(int *arr, int start, int end) {
     mergeSort(arr, start, mid);
     mergeSort(arr, mid + 1, end);
     // Merge the two halves
-    int *temp = new int[end - start + 1];
+    int *temp = new int[end - start + 1]; //here the best thing one ccan do with i
     int i = start, j = mid + 1, k = 0;
     while(i <= mid && j <= end) {
         if(arr[i] < arr[j]) {
-            temp[k++] = arr[i++];
+            temp[k++] = arr[i++]; //here the best thing you can do with either to do with 
         }
         else {
-            temp[k++] = arr[j++];
+            temp[k++] = arr[j++];// here the variabe is being stored at different locations for getting the kind of 
         }
     }
     while(i <= mid) {
