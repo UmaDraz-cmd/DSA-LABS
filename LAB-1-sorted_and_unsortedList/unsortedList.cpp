@@ -97,6 +97,20 @@ void unsortedList::  reverse() {
     }
 
 }
+int unsortedList::countdifference(const unsortedList& List2) {
+    int count = 0;
+    for(int i=0; i<currSize; i++) {
+        for(int j=0; j<List2.currSize; j++) {
+            if(arr[i]==List2.arr[j]) {
+                arr[i]= arr[currSize-1];
+
+                currSize--;
+                
+            }
+        }
+    }
+    return count;
+}
 void unsortedList:: combineList(const unsortedList & list2) {
    
     int newSize = maxSize + list2.maxSize;

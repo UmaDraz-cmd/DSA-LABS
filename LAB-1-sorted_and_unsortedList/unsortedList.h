@@ -29,4 +29,6 @@ class unsortedList{
         int removeAll3(int val);
         int removeAll4(int val);
         bool search(int );
+        
+        int countdifference(const unsortedList& List2);
 };
