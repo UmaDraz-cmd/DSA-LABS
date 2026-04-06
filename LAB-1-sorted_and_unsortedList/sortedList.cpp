@@ -74,12 +74,15 @@ bool sortedList::replace(int idx, int newVal) {
     else {
         while(i<currSize){
             if(i==idx) {
-                arr[i]= arr[idx];
+                arr[i]= newVal;
+
 
                 return true;
 
 
             }
+            return false;
+            i++;
         }
     }
 
@@ -94,7 +97,7 @@ bool sortedList::replace(int idx, int newVal) {
         if (arr[mid] == val)
         {
             return true;
-        }
+        } 
         else if (arr[mid] < val)
         {
             start = mid + 1;
@@ -106,6 +109,7 @@ bool sortedList::replace(int idx, int newVal) {
     }
     return false;
 }
+
 int sortedList:: removeAll(int val) { //removeAll traversing once and not using any extra arr
     int i=0,count=0,j=currSize-1;
     while(i<currSize) {
