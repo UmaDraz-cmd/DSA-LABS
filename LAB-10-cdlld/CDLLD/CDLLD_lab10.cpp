@@ -1,4 +1,4 @@
-#include "CDLLD.h"
+#include "CDLLD_lab10.h"
 #include <iostream>
 using namespace std;
 CDLLD::CDLLD()
@@ -86,7 +86,7 @@ bool CDLLD::sortedRemove(int val)
     }
     else
     {
-        return false;
+        return false; 
     }
 }
 bool CDLLD::unsortedRemove(int val)
@@ -312,3 +312,63 @@ void CDLLD::displayCDLLD()
         curr = curr->next;
     }
 }
+bool CDLLD:: merge(CDLLD& list1, CDLLD& list2) {
+    DNode* temp1=list1.head.next;
+    DNode* temp2=list2.head.next;
+    DNode* temp3= &head;
+    if(list1.isSorted() && list2.isSorted()) {
+        while(temp1!=&head || temp2!=&head) {
+            if(temp1->data<temp2->data) {
+                
+            temp3->next=temp1;
+            temp1->prev=temp3;
+            temp3=temp3->next;
+            temp1=temp1->next; 
+            }
+            else {
+            
+            temp3->next=temp2;
+            temp2->prev=temp3;
+            temp3=temp3->next;
+            temp2=temp2->next; 
+            
+
+            }
+        while(temp1!= &head) {
+            
+            temp3->next=temp1;
+            temp1->prev=temp3;
+            temp3=temp3->next;
+            temp1=temp1->next; 
+
+        }
+        while(temp2!= &head) {
+            
+            temp3->next=temp2;
+            temp2->prev=temp3;
+            temp3=temp3->next;
+            temp2=temp2->next; 
+
+        }
+        
+    temp3->next=&head;
+    head.prev=temp3;
+    list1.head.next=list1.head.prev=&(list1.head);
+    list2.head.next=list2.head.prev=&(list2.head);
+    
+        return true;
+
+            
+        }
+    }
+    else {
+        return false;
+    }
+}
+void mergeSort() {
+    //splitList() { 
+
+    }
+    
+
+

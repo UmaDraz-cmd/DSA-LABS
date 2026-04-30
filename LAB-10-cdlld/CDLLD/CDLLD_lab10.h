@@ -30,5 +30,7 @@ public:
     bool removeSecondLastNode (int& val);
     bool removeKthNode (int k, int& val);
     void displayCDLLD();
+    
+    bool  merge(CDLLD& list1, CDLLD& list2);
 };
 
