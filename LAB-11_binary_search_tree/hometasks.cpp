@@ -26,6 +26,21 @@ class BST
 {
 private:
     BSTNode* root;
+    bool recSearch (BSTNode* b, int key){
+        if(b == nullptr){
+            return false;
+        }
+        if(b->data == key){
+            return true;
+        }
+        else if(b->data < key){
+            return recSearch(b->right,key);
+        }
+        else{
+            return recSearch(b->left,key);
+        }
+    }
+    // private (workhorse function) 
 
     void displayInOrder(BSTNode* curr)
     {
@@ -91,17 +106,9 @@ private:
 
         return false;
     }
-    // int searchRecursively(int val) {
-    //     BSTNode *curr= root;
-    //     if(curr==nullptr) {
-    //         return -1;
-    //     }
-    //     if(curr->data<val) {
-    //         return searchRecursively(curr->right, val)
-    //     }
-    //     re
-
-    // }
+    bool recSearch(int key) {
+        return recSearch(root, key);
+    }
 
     void displayInOrder()
     {
@@ -133,29 +140,29 @@ private:
         {
             prnt = curr;
 
-            if(val == curr->data)
+            if(val == curr->data) // No duplicate values allowed
             {
                 delete newNode;
                 return false;
             }
-            else if(val < curr->data)
+            else if(val < curr->data) // Go to left subtree
             {
                 curr = curr->left;
             }
             else
             {
-                curr = curr->right;
+                curr = curr->right; // Go to right subtree
             }
         }
 
         // When tree is empty
-        if(prnt == nullptr)
+        if(prnt == nullptr) //
         {
-            root = newNode;
+            root = newNode; // New node becomes the root
             return true;
         }
 
-        if(val > prnt->data)
+        if(val > prnt->data) //
         {
             prnt->right = newNode;
         }

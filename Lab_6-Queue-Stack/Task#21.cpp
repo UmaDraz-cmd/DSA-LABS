@@ -4,6 +4,7 @@
 #include<algorithm>
 #include<math.h>
 using namespace std;
+//these are the operators which would be returned to the functions called in postfix programm logic
 int cal(int val1, int temp, int val2)
 {
     if(temp == '+')
@@ -23,6 +24,8 @@ int cal(int val1, int temp, int val2)
         return val1 / val2;
     }
 }
+//this is the code part of postfix function which recieves operators indirectly and it's call directly from  the 
+// operators functionn defined above 
 int postfix(string s)
 {
     int i=0;
@@ -47,23 +50,6 @@ int postfix(string s)
     
 }
 
-// In this task you are going to write a program to implement the algorithm (that we have seen in class) 
-// for evaluating postfix expressions which involves the four basic arithmetic operators: +, –, *, and 
-// /, and the unary minus operator (~ will be used to indicate the unary minus operator, in order to 
-// distinguish it from the subtraction operator). 
-algo for  evaluating postfix expressions which involves the four basic arithmetic operators: +, –, *, and /, and the unary minus operator (~ will be used to indicate the unary minus operator, in order to distinguish it from the subtraction operator).
-
-// Since, this algorithm uses a stack; therefore, firstly you will have to implement a Stack class for 
-// storing double values (during lecture we have already implemented a stack of integers). 
-// Once, you have implemented the Stack class, you need to get the postfix expression from the user 
-// and store it in a null-terminated char array (c-string). After that you would implement the following 
-// function, which takes the postfix expression present in the null-terminated char array (input) and 
-// evaluates it using the algorithm that we have discussed in the lecture: 
-// void evaluatePostfixExpression ( char* input ) 
-// To trace the actions of the algorithm, this function should also display each token as it is encountered, 
-// and the actions (stack operations) that it is performing. For example, the output of your program 
-// should resemble the following (text shown in Red is entered by the user): 
-// Enter the postfix expression: 12 3 ~ 1 - / 4.6 ~ * 
 
  
 // Token = 12  Push 12 
@@ -81,7 +67,10 @@ algo for  evaluating postfix expressions which involves the four basic arithmeti
 
 int main()
 {
+    int a,b;
+ //using referernce variables to access the pushed data  over the stack to get the real understanding of the object orienkted model of the system    
     cout<<postfix("73+1-");
+    //here the function call invoked after the precision point has been decided to get the right point to point understanding 
 }
 
     

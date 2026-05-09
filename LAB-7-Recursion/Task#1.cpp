@@ -7,7 +7,7 @@ int printVertical(int val) {
     }
     else{
         
-        printVertical(val/10);
+        printVertical(val/10); //567 stack= printVertical(56) stack= printVertical(5) stack= printVertical(0) stack= return 0
         cout<<val%10<<endl;
     }
 }

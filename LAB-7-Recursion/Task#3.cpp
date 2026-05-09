@@ -15,7 +15,7 @@ int linearSearchUpdated(int* arr, int start, int end, int key)
 int main()
 {
     int size, key;
-    cout << "Enter the size of the array: ";
+    cout << "Enter the size of the array: "; 
     cin >> size;
     int* arr = new int[size];
     cout << "Enter the elements of the array: ";
