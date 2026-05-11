@@ -216,8 +216,7 @@ private:
         }
 
         // Deletion of Degree 1 or 0
-        BSTNode* child;
-
+        BSTNode* child; // point to the only child of curr or nullptr if curr has no child
         if(curr->left != nullptr)
         {
             child = curr->left;
@@ -227,17 +226,17 @@ private:
             child = curr->right;
         }
 
-        if(prnt == nullptr)
+        if(prnt == nullptr) // Deletion of root node
         {
             root = child;
         }
-        else if(curr == prnt->left)
+        else if(curr == prnt->left) // Deletion of left child
         {
-            prnt->left = child;
+            prnt->left = child; // prnt->left = curr->left or curr->right (child)
         }
         else
         {
-            prnt->right = child;
+            prnt->right = child; //prnt->right = curr->left or curr->right (child)
         }
 
         delete curr;
